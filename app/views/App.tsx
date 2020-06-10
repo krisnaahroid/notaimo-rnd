@@ -2,11 +2,15 @@ import 'react-native-gesture-handler';
 import * as React from 'react';
 import {AsyncStorage, Button, Text, TextInput, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from '@react-navigation/stack';
 
-import HomeScreen from './HomeScreen';
-import SignInScreen from './SignInScreen';
-import SplashScreen from './SplashScreen';
+import HomeScreen from './Dashboard/Home/HomeScreen';
+import ProfileScreen from './Dashboard/Profile/ProfileScreen';
+import SignInScreen from './Auth/Login/Login';
+import SplashScreen from './Dashboard/Particles/SplashScreen';
 
 export const AuthContext = React.createContext();
 
@@ -87,6 +91,18 @@ export default function App({navigation}) {
     [],
   );
 
+  const config = {
+    animation: 'spring',
+    config: {
+      stiffness: 1000,
+      damping: 500,
+      mass: 3,
+      overshootClamping: true,
+      restDisplacementThreshold: 0.01,
+      restSpeedThreshold: 0.01,
+    },
+  };
+
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
@@ -110,7 +126,17 @@ export default function App({navigation}) {
             />
           ) : (
             // User is signed in
-            <Stack.Screen name="Home" component={HomeScreen} />
+            <>
+              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen
+                name="profile"
+                component={ProfileScreen}
+                options={{
+                  cardStyleInterpolator:
+                    CardStyleInterpolators.forModalPresentationIOS,
+                }}
+              />
+            </>
           )}
         </Stack.Navigator>
       </NavigationContainer>

@@ -7,13 +7,13 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import {AuthContext} from './App';
+import {AuthContext} from '../../App';
 import {
   TouchableHighlight,
   TouchableOpacity,
 } from 'react-native-gesture-handler';
 
-import {styles} from './stylesSignin';
+import {styles} from './Styles';
 
 const SignInScreen: React.SFC = () => {
   const [username, setUsername] = React.useState('');
