@@ -9,6 +9,8 @@ import {
 
 import HomeScreen from './Dashboard/Home/HomeScreen';
 import ProfileScreen from './Dashboard/Profile/ProfileScreen';
+import NewTransaction from './Dashboard/NewTransaction/NewTransaction';
+
 import SignInScreen from './Auth/Login/Login';
 import SplashScreen from './Dashboard/Particles/SplashScreen';
 
@@ -131,6 +133,14 @@ export default function App({navigation}) {
               <Stack.Screen
                 name="profile"
                 component={ProfileScreen}
+                options={{
+                  cardStyleInterpolator:
+                    CardStyleInterpolators.forModalPresentationIOS,
+                }}
+              />
+              <Stack.Screen
+                name="add.transaction"
+                component={NewTransaction}
                 options={{
                   cardStyleInterpolator:
                     CardStyleInterpolators.forModalPresentationIOS,

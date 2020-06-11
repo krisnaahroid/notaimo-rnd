@@ -52,10 +52,15 @@ export const styles = StyleSheet.create({
     paddingRight: 10,
     paddingBottom: 5,
     borderRadius: 5,
-    marginRight: 20,
+    marginRight: 10,
   },
   chartLabel: {
-    marginRight: 20,
+    marginRight: 10,
+    paddingTop: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 5,
+    borderRadius: 5,
   },
   toolText: {
     color: '#ffffff',

@@ -20,7 +20,7 @@ export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: 'blue',
     flex: 1,
   },
 });

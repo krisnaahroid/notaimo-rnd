@@ -142,7 +142,9 @@ const HomeScreen: React.SFC = ({navigation}) => {
                   <Text style={styles.percent}>-2.7%</Text>
                 </View>
                 <View>
-                  <TouchableOpacity style={styles.add} onPress={signOut}>
+                  <TouchableOpacity
+                    style={styles.add}
+                    onPress={() => navigation.navigate('add.transaction')}>
                     <Text style={styles.addText}>Add New</Text>
                   </TouchableOpacity>
                 </View>
